@@ -1,0 +1,24 @@
+{
+  "event": "ev3",
+  "customer": "Sunset Corner Market",
+  "customerLocation": {
+    "name": "Sunset Corner Market",
+    "phone": "(510) 555-0153",
+    "street": "2215 Shattuck Ave",
+    "city": "Berkeley",
+    "state": "CA",
+    "zip": "94704",
+    "country": "USA"
+  },
+  "invoice": "GVP-30520",
+  "deliveryDate": "2026-11-13",
+  "receivedBy": "Tom Alvarez",
+  "lines": [
+    {
+      "product": "Slicer cucumbers",
+      "lot": "RC-SLC-1109-07",
+      "qty": 12,
+      "unit": "CS"
+    }
+  ]
+}

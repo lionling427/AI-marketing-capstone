@@ -1,0 +1,30 @@
+{
+  "event": "ev3",
+  "customer": "FreshWay Market #12",
+  "customerLocation": {
+    "name": "FreshWay Market #12",
+    "phone": "(510) 555-0188",
+    "street": "3300 Broadway",
+    "city": "Oakland",
+    "state": "CA",
+    "zip": "94611",
+    "country": "USA"
+  },
+  "invoice": "GVP-30511",
+  "deliveryDate": "2026-11-12",
+  "receivedBy": "Jordan Lee",
+  "lines": [
+    {
+      "product": "English cucumbers",
+      "lot": "RC-ENG-1109-02",
+      "qty": 15,
+      "unit": "CS"
+    },
+    {
+      "product": "Slicer cucumbers",
+      "lot": "RC-SLC-1109-07",
+      "qty": 20,
+      "unit": "CS"
+    }
+  ]
+}

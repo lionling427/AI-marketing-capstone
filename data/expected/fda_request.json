@@ -1,0 +1,8 @@
+{
+  "event": "ev4",
+  "commodity": "Fresh cucumbers",
+  "supplier": "Rio Claro Growers",
+  "from": "2026-11-01",
+  "to": "2026-11-15",
+  "deadlineHours": 24
+}

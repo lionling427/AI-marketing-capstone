@@ -1,0 +1,15 @@
+{
+  "podMail": "Hi, attached is the signed delivery receipt for invoice {inv}. Everything arrived in good condition.\n{who}, {c}",
+  "ackMail": "Hello Maria,\nWe received your recall report for lot RC-SLC-1109-07, including the response sheet, photos and signed destruction forms. Every case is accounted for. We have added your results to our report to the FDA. Thank you for acting so quickly.\nL. Moreno, Food Safety, Rio Claro Growers",
+  "fdaMail": "We are investigating illnesses that may be linked to fresh cucumbers. Please send, within 24 hours, an electronic sortable spreadsheet of your receiving and shipping records for fresh cucumbers received from Rio Claro Growers between 11/01/2026 and 11/15/2026.",
+  "recallMail": "Rio Claro Growers is voluntarily recalling Slicer cucumbers, lot RC-SLC-1109-07 (packed 11/09/2026), because they may be contaminated with Salmonella. Notify your customers, stop sale, have the product destroyed, and send us the quantities and evidence by 12/05.",
+  "noticeMail2": "URGENT recall: Slicer cucumbers, lot RC-SLC-1109-07, delivered {d} (invoice {inv}, {q} CS). Stop selling now and destroy the product. Within 24 hours, reply with (1) a photo of the destroyed product and (2) the signed destruction form, showing how many cases were destroyed and how many were already sold.\nGreen Valley Produce, (510) 555-0142",
+  "repMail": "Recall report for lot RC-SLC-1109-07. All 3 customers were notified on {d}. {a} of {t} CS accounted for: {x} destroyed, {s} sold to consumers before the notice, {h} held in our warehouse. Photos, signed destruction forms, the response sheet and the call log are attached.",
+  "rpl1": "All 20 cases pulled and destroyed this morning. Photo and signed form attached.",
+  "rpl2": "We destroyed 13 cases. 3 cases were already sold to customers before your notice. Photo and signed form attached.",
+  "rpl3": "Sorry for the delay. All 12 cases destroyed. Photo and signed form attached.",
+  "mLot": "The lot code for {product} is {lot}. Label photo attached.",
+  "mNoLot": "We are checking with our packhouse and will send the lot code for {product} soon.",
+  "simLot": "Simulate reply with lot code",
+  "noticeMail": "URGENT: Product recall. Romaine hearts 3ct, lot SR-ROM-1104-A12, delivered on {d} (invoice {inv}, {q} CS). Stop selling it now, pull it from shelves, and keep it aside for pickup or destroy it. Please reply with how many cases you removed.\nGreen Valley Produce, (510) 555-0142"
+}

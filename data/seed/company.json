@@ -1,0 +1,19 @@
+{
+  "name": "Green Valley Produce",
+  "role": "Produce distributor (FSMA 204: receives and ships foods on the Food Traceability List)",
+  "location": {
+    "name": "Green Valley Produce",
+    "phone": "(510) 555-0142",
+    "street": "1200 Harbor Rd",
+    "city": "Oakland",
+    "state": "CA",
+    "zip": "94607",
+    "country": "USA"
+  },
+  "team": [
+    "Ana Ruiz",
+    "David Kim",
+    "Maria Lopez"
+  ],
+  "inbox": "traceability@greenvalley-produce.example"
+}

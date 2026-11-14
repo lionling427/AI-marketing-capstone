@@ -1,0 +1,59 @@
+[
+  {
+    "c": "FreshWay Market #12",
+    "q": 20,
+    "d": "2026-11-12",
+    "inv": "GVP-30511",
+    "contact": "Jordan Lee",
+    "destroyed": 20,
+    "sold": 0,
+    "rk": "rpl1",
+    "loc": {
+      "name": "FreshWay Market #12",
+      "phone": "(510) 555-0188",
+      "street": "3300 Broadway",
+      "city": "Oakland",
+      "state": "CA",
+      "zip": "94611",
+      "country": "USA"
+    }
+  },
+  {
+    "c": "Hillcrest Grocery",
+    "q": 16,
+    "d": "2026-11-12",
+    "inv": "GVP-30514",
+    "contact": "Priya Shah",
+    "destroyed": 13,
+    "sold": 3,
+    "rk": "rpl2",
+    "loc": {
+      "name": "Hillcrest Grocery",
+      "phone": "(415) 555-0136",
+      "street": "940 Hillcrest Ave",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94112",
+      "country": "USA"
+    }
+  },
+  {
+    "c": "Sunset Corner Market",
+    "q": 12,
+    "d": "2026-11-13",
+    "inv": "GVP-30520",
+    "contact": "Tom Alvarez",
+    "destroyed": 12,
+    "sold": 0,
+    "rk": "rpl3",
+    "loc": {
+      "name": "Sunset Corner Market",
+      "phone": "(510) 555-0153",
+      "street": "2215 Shattuck Ave",
+      "city": "Berkeley",
+      "state": "CA",
+      "zip": "94704",
+      "country": "USA"
+    }
+  }
+]

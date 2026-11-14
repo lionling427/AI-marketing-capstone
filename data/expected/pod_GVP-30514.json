@@ -1,0 +1,30 @@
+{
+  "event": "ev3",
+  "customer": "Hillcrest Grocery",
+  "customerLocation": {
+    "name": "Hillcrest Grocery",
+    "phone": "(415) 555-0136",
+    "street": "940 Hillcrest Ave",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94112",
+    "country": "USA"
+  },
+  "invoice": "GVP-30514",
+  "deliveryDate": "2026-11-12",
+  "receivedBy": "Priya Shah",
+  "lines": [
+    {
+      "product": "English cucumbers",
+      "lot": "RC-ENG-1109-02",
+      "qty": 15,
+      "unit": "CS"
+    },
+    {
+      "product": "Slicer cucumbers",
+      "lot": "RC-SLC-1109-07",
+      "qty": 16,
+      "unit": "CS"
+    }
+  ]
+}

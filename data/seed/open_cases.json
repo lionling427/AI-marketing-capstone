@@ -1,0 +1,181 @@
+{
+  "note": "Cases already in progress when the demo starts. They stay Pending for the whole story.",
+  "cases": {
+    "TR-2026-0412": {
+      "id": "TR-2026-0412",
+      "scen": "x1",
+      "open": "s2",
+      "up": {
+        "x1a": 100,
+        "x1b": 100,
+        "x1c": 100,
+        "x1d": 100
+      },
+      "step": 4,
+      "grouped": true,
+      "owner": "David Kim",
+      "created": {
+        "$t": "2026-11-06T08:40:00"
+      },
+      "sel": "supplier",
+      "docId": "inv",
+      "hk": "supplier",
+      "res": {},
+      "lot": {
+        "m0": {
+          "stage": "waiting",
+          "thread": [
+            {
+              "from": "us",
+              "kind": "mReq",
+              "ts": {
+                "$t": "2026-11-06T09:05:00"
+              }
+            }
+          ],
+          "replies": 0
+        }
+      },
+      "audit": [
+        {
+          "ts": {
+            "$t": "2026-11-06T08:40:00"
+          },
+          "who": "David Kim",
+          "k": "a_group"
+        },
+        {
+          "ts": {
+            "$t": "2026-11-06T08:40:01"
+          },
+          "who": "TraceReady",
+          "k": "a_extract"
+        },
+        {
+          "ts": {
+            "$t": "2026-11-06T08:40:02"
+          },
+          "who": "TraceReady",
+          "k": "a_flag",
+          "o": {
+            "n": 1
+          }
+        },
+        {
+          "ts": {
+            "$t": "2026-11-06T09:05:00"
+          },
+          "who": "David Kim",
+          "k": "a_send2",
+          "o": {
+            "product": "Jalapeño peppers"
+          }
+        }
+      ],
+      "unread": false,
+      "lastUpdate": {
+        "$t": "2026-11-06T09:05:00"
+      },
+      "flagged": true,
+      "signed": null,
+      "tStart": {
+        "$t": "2026-11-06T08:40:00"
+      },
+      "tDone": 0,
+      "fdaStage": "idle",
+      "fdaStart": 0,
+      "fdaMs": 0,
+      "sigName": "",
+      "sigPts": [],
+      "sigOk": false
+    },
+    "TR-2026-0415": {
+      "id": "TR-2026-0415",
+      "scen": "x2",
+      "open": "s2",
+      "up": {
+        "x2a": 100,
+        "x2b": 100,
+        "x2c": 100,
+        "x2d": 100
+      },
+      "step": 4,
+      "grouped": true,
+      "owner": "Ana Ruiz",
+      "created": {
+        "$t": "2026-11-07T07:55:00"
+      },
+      "sel": "supplier",
+      "docId": "inv",
+      "hk": "supplier",
+      "res": {},
+      "lot": {
+        "m0": {
+          "stage": "waiting",
+          "thread": [
+            {
+              "from": "us",
+              "kind": "mReq",
+              "ts": {
+                "$t": "2026-11-07T10:05:00"
+              }
+            }
+          ],
+          "replies": 0
+        }
+      },
+      "audit": [
+        {
+          "ts": {
+            "$t": "2026-11-07T07:55:00"
+          },
+          "who": "Ana Ruiz",
+          "k": "a_group"
+        },
+        {
+          "ts": {
+            "$t": "2026-11-07T07:55:01"
+          },
+          "who": "TraceReady",
+          "k": "a_extract"
+        },
+        {
+          "ts": {
+            "$t": "2026-11-07T07:55:02"
+          },
+          "who": "TraceReady",
+          "k": "a_flag",
+          "o": {
+            "n": 1
+          }
+        },
+        {
+          "ts": {
+            "$t": "2026-11-07T10:05:00"
+          },
+          "who": "Ana Ruiz",
+          "k": "a_send2",
+          "o": {
+            "product": "Baby spinach 2.5 lb"
+          }
+        }
+      ],
+      "unread": false,
+      "lastUpdate": {
+        "$t": "2026-11-07T10:05:00"
+      },
+      "flagged": true,
+      "signed": null,
+      "tStart": {
+        "$t": "2026-11-07T07:55:00"
+      },
+      "tDone": 0,
+      "fdaStage": "idle",
+      "fdaStart": 0,
+      "fdaMs": 0,
+      "sigName": "",
+      "sigPts": [],
+      "sigOk": false
+    }
+  }
+}

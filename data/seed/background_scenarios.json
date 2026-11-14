@@ -1,0 +1,240 @@
+{
+  "x1": {
+    "supplier": "Mesa Azul Farms",
+    "addr": "Yuma, AZ",
+    "po": "PO-4478",
+    "bol": "BOL-610552",
+    "inv": "MA-7741",
+    "ship": "2026-11-10",
+    "recv": "2026-11-11",
+    "signer": "J. Ortiz",
+    "packer": "Mesa Azul Farms packhouse, Yuma, AZ",
+    "email": "sales@mesaazul.example",
+    "lines": [
+      {
+        "p": "Jalapeño peppers",
+        "lot": "",
+        "realLot": "MA-JAL-1110-04",
+        "qi": 20,
+        "qp": 20,
+        "unit": "CS",
+        "gtin": "10850044500012",
+        "pack": "2026-11-10"
+      },
+      {
+        "p": "Green onions",
+        "lot": "MA-GON-1110-02",
+        "qi": 15,
+        "qp": 15,
+        "unit": "CS",
+        "gtin": "10850044500029",
+        "pack": "2026-11-10"
+      }
+    ],
+    "files": [
+      {
+        "id": "x1a",
+        "name": "Invoice_MA-7741.pdf",
+        "kind": "inv",
+        "ext": "PDF"
+      },
+      {
+        "id": "x1b",
+        "name": "PackingSlip_PO-4478.pdf",
+        "kind": "pk",
+        "ext": "PDF"
+      },
+      {
+        "id": "x1c",
+        "name": "BOL_610552.pdf",
+        "kind": "bol",
+        "ext": "PDF"
+      },
+      {
+        "id": "x1d",
+        "name": "PalletLabel_jalapeno.jpg",
+        "kind": "lbl",
+        "ext": "JPG"
+      }
+    ],
+    "loc": {
+      "name": "Mesa Azul Farms",
+      "phone": "(928) 555-0164",
+      "street": "610 County 12th St",
+      "city": "Yuma",
+      "state": "AZ",
+      "zip": "85364",
+      "country": "USA"
+    }
+  },
+  "x2": {
+    "supplier": "Bright Leaf Co.",
+    "addr": "Santa Maria, CA",
+    "po": "PO-4481",
+    "bol": "BOL-733018",
+    "inv": "BL-30217",
+    "ship": "2026-11-11",
+    "recv": "2026-11-12",
+    "signer": "K. Chen",
+    "packer": "Bright Leaf Co. packhouse, Santa Maria, CA",
+    "email": "ops@brightleaf.example",
+    "lines": [
+      {
+        "p": "Baby spinach 2.5 lb",
+        "lot": "",
+        "realLot": "BL-SPN-1111-09",
+        "qi": 18,
+        "qp": 18,
+        "unit": "CS",
+        "gtin": "10850055600017",
+        "pack": "2026-11-11"
+      }
+    ],
+    "files": [
+      {
+        "id": "x2a",
+        "name": "Invoice_BL-30217.pdf",
+        "kind": "inv",
+        "ext": "PDF"
+      },
+      {
+        "id": "x2b",
+        "name": "PackingSlip_PO-4481.pdf",
+        "kind": "pk",
+        "ext": "PDF"
+      },
+      {
+        "id": "x2c",
+        "name": "BOL_733018.pdf",
+        "kind": "bol",
+        "ext": "PDF"
+      },
+      {
+        "id": "x2d",
+        "name": "PalletLabel_spinach.jpg",
+        "kind": "lbl",
+        "ext": "JPG"
+      }
+    ],
+    "loc": {
+      "name": "Bright Leaf Co.",
+      "phone": "(805) 555-0108",
+      "street": "75 Betteravia Rd",
+      "city": "Santa Maria",
+      "state": "CA",
+      "zip": "93454",
+      "country": "USA"
+    }
+  },
+  "s3": {
+    "supplier": "Sunridge Farms",
+    "addr": "Salinas, CA",
+    "po": "PO-4492",
+    "bol": "BOL-445019",
+    "inv": "SR-118870",
+    "ship": "2026-11-04",
+    "recv": "2026-11-05",
+    "signer": "K. Chen",
+    "packer": "Sunridge Farms packhouse, Salinas, CA",
+    "lines": [
+      {
+        "p": "Romaine hearts 3ct",
+        "lot": "SR-ROM-1104-A12",
+        "qi": 60,
+        "qp": 60,
+        "unit": "CS",
+        "gtin": "10850033400015",
+        "pack": "2026-11-04"
+      }
+    ],
+    "out": [
+      {
+        "d": "2026-11-06",
+        "c": "FreshWay Market #12",
+        "inv": "GVP-30411",
+        "q": 25,
+        "loc": {
+          "name": "FreshWay Market #12",
+          "phone": "(510) 555-0188",
+          "street": "3300 Broadway",
+          "city": "Oakland",
+          "state": "CA",
+          "zip": "94611",
+          "country": "USA"
+        }
+      },
+      {
+        "d": "2026-11-06",
+        "c": "Hillcrest Grocery",
+        "inv": "GVP-30415",
+        "q": 20,
+        "loc": {
+          "name": "Hillcrest Grocery",
+          "phone": "(415) 555-0136",
+          "street": "940 Hillcrest Ave",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "94112",
+          "country": "USA"
+        }
+      },
+      {
+        "d": "2026-11-07",
+        "c": "Bayview Bistro",
+        "inv": "GVP-30422",
+        "q": 15,
+        "loc": {
+          "name": "Bayview Bistro",
+          "phone": "(510) 555-0119",
+          "street": "15 Marina Way",
+          "city": "Alameda",
+          "state": "CA",
+          "zip": "94501",
+          "country": "USA"
+        }
+      }
+    ],
+    "files": [
+      {
+        "id": "s3a",
+        "name": "Invoice_SR-118870.pdf",
+        "kind": "inv",
+        "ext": "PDF"
+      },
+      {
+        "id": "s3b",
+        "name": "PackingSlip_PO-4492.pdf",
+        "kind": "pk",
+        "ext": "PDF"
+      },
+      {
+        "id": "s3c",
+        "name": "BOL_445019.pdf",
+        "kind": "bol",
+        "ext": "PDF"
+      },
+      {
+        "id": "s3d",
+        "name": "PalletLabel_romaine.jpg",
+        "kind": "lbl",
+        "ext": "JPG"
+      },
+      {
+        "id": "s3e",
+        "name": "Outbound_deliveries_Nov.csv",
+        "kind": "csv",
+        "ext": "CSV"
+      }
+    ],
+    "email": "orders@sunridge.example",
+    "loc": {
+      "name": "Sunridge Farms",
+      "phone": "(831) 555-0123",
+      "street": "2100 Abbott St",
+      "city": "Salinas",
+      "state": "CA",
+      "zip": "93901",
+      "country": "USA"
+    }
+  }
+}

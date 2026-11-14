@@ -1,0 +1,61 @@
+{
+  "caseId": "TR-2026-0420",
+  "documents": {
+    "inv": "Invoice_RC-55102.pdf",
+    "pk": "PackingSlip_PO-4486.pdf",
+    "bol": "BOL_902334.pdf",
+    "lbl": "PalletLabels_cucumbers.pdf"
+  },
+  "fields": {
+    "supplier": "Rio Claro Growers",
+    "supplierLocation": {
+      "name": "Rio Claro Growers",
+      "phone": "(520) 555-0177",
+      "street": "88 Calle Mercado",
+      "city": "Nogales",
+      "state": "AZ",
+      "zip": "85621",
+      "country": "USA"
+    },
+    "po": "PO-4486",
+    "invoice": "RC-55102",
+    "bol": "BOL-902334",
+    "shipDate": "2026-11-09",
+    "receiveDate": "2026-11-10",
+    "tlcSource": "Rio Claro Growers packhouse, Nogales, AZ"
+  },
+  "lines": [
+    {
+      "product": "English cucumbers",
+      "gtin": "10850022300032",
+      "packDate": "2026-11-09",
+      "unit": "CS",
+      "lotOnDocuments": "RC-ENG-1109-02",
+      "qtyInvoice": 30,
+      "qtyPackingSlip": 30
+    },
+    {
+      "product": "Slicer cucumbers",
+      "gtin": "10850022300049",
+      "packDate": "2026-11-09",
+      "unit": "CS",
+      "lotOnDocuments": null,
+      "qtyInvoice": 50,
+      "qtyPackingSlip": 48
+    }
+  ],
+  "problems": [
+    {
+      "type": "missing_lot",
+      "product": "Slicer cucumbers",
+      "why": "Lot code is smudged on the pallet label and missing on the invoice."
+    },
+    {
+      "type": "quantity_conflict",
+      "product": "Slicer cucumbers",
+      "invoice": 50,
+      "packingSlip": 48,
+      "billOfLading": 48
+    }
+  ]
+}

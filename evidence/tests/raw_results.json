@@ -1,0 +1,295 @@
+{
+ "results": [
+  {
+   "cat": "Normal",
+   "layer": "Rule",
+   "input": "Receiving documents agree: lot printed, invoice 30 = packing slip 30",
+   "expected": "No problem flagged; record can go to sign-off",
+   "baseline": "Clerk types the row into the spreadsheet; works",
+   "consequence": "None",
+   "revision": "None needed",
+   "id": "R1",
+   "observed": "problems: 0",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Missing information",
+   "layer": "Rule",
+   "input": "Lot code missing on invoice and smudged on label (RC-C?L-11?9-0?)",
+   "expected": "missing_lot flagged; sign-off blocked until a lot is applied",
+   "baseline": "Row saved with blank or guessed lot; often not noticed until an FDA request",
+   "consequence": "Lot cannot be traced in a recall",
+   "revision": "Rule now derived from document fields (v15), no longer a hand-set flag in the data",
+   "id": "R2",
+   "observed": [
+    "missing_lot"
+   ],
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Boundary",
+   "layer": "Rule",
+   "input": "Invoice 50 CS vs packing slip 48 CS",
+   "expected": "quantity_conflict flagged; person must choose a quantity and give a reason",
+   "baseline": "Clerk keeps whichever document is on top",
+   "consequence": "Lot balance wrong; recall counts do not add up",
+   "revision": "Same as R2",
+   "id": "R3",
+   "observed": [
+    "quantity_conflict"
+   ],
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Harmful error",
+   "layer": "Rule",
+   "input": "Supplier emails lot RC-ENG-1109-02 for the slicer cucumbers (already the English cucumber lot)",
+   "expected": "duplicate_lot: lot cannot be applied",
+   "baseline": "Clerk copies the code from the email",
+   "consequence": "Two products share one lot; a recall of either pulls the wrong product or misses one",
+   "revision": "Added lotProblem() check in v15; apply button hidden with an alert",
+   "id": "R4",
+   "observed": "duplicate_lot",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Boundary",
+   "layer": "Rule",
+   "input": "Supplier emails RC-SLC-1110-07 but the label pack date is 2026-11-09",
+   "expected": "pack_date_mismatch: lot cannot be applied",
+   "baseline": "Copied as sent",
+   "consequence": "Wrong lot linked; recall scope wrong",
+   "revision": "Added in v15 (assumes the supplier encodes MMDD; must be confirmed per supplier)",
+   "id": "R5",
+   "observed": "pack_date_mismatch",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Harmful error",
+   "layer": "Rule",
+   "input": "Delivery receipt read as RC-SLC-1109-01 instead of RC-SLC-1109-07 (AI misread)",
+   "expected": "no_receiving_record flagged; shipment cannot be signed",
+   "baseline": "Shipping log keeps the wrong lot",
+   "consequence": "Store missing from the recall list: product stays on shelves (false negative)",
+   "revision": "v15: unknown lots marked on screen and signing blocked (before v15 every line showed \"matched\")",
+   "id": "R6",
+   "observed": [
+    "no_receiving_record"
+   ],
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Boundary",
+   "layer": "Rule",
+   "input": "Receipts total 50 CS of a lot received as 48 CS",
+   "expected": "over_shipped flagged; signing blocked",
+   "baseline": "Not detected",
+   "consequence": "Records cannot be right; FDA spreadsheet inconsistent",
+   "revision": "v15 (before v15 the balance always showed \"Balances\")",
+   "id": "R7",
+   "observed": [
+    [
+     "over_shipped",
+     50,
+     48
+    ]
+   ],
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Boundary",
+   "layer": "Rule",
+   "input": "Destruction form: 12 destroyed + 3 sold, but 16 received",
+   "expected": "evidence_does_not_add_up; evidence cannot be confirmed",
+   "baseline": "Totals checked by hand at the end, if at all",
+   "consequence": "1 case unaccounted for in the report to the supplier and FDA",
+   "revision": "v15: confirm button replaced by a warning",
+   "id": "R8",
+   "observed": [
+    "evidence_does_not_add_up"
+   ],
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Normal",
+   "layer": "Rule",
+   "input": "Destruction forms for all 3 stores as in the story (20/0, 13/3, 12/0)",
+   "expected": "No problem",
+   "baseline": "Manual tally",
+   "consequence": "None",
+   "revision": "None needed",
+   "id": "R9",
+   "observed": "problems: 0",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Normal",
+   "layer": "Prototype",
+   "input": "Story receiving case: upload the 4 Rio Claro documents",
+   "expected": "Exactly 2 problems shown (missing lot, 50 vs 48); nothing else",
+   "baseline": "Problems found later or never",
+   "consequence": "-",
+   "revision": "-",
+   "id": "U1",
+   "observed": [
+    "conf:Slicer cucumbers",
+    "miss:Slicer cucumbers"
+   ],
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Normal",
+   "layer": "Prototype",
+   "input": "Same delivery with a readable lot and matching quantities",
+   "expected": "0 problems",
+   "baseline": "-",
+   "consequence": "False positives would waste clerk time",
+   "revision": "-",
+   "id": "U2",
+   "observed": "problems: 0",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Harmful error",
+   "layer": "Prototype",
+   "input": "Supplier reply carries a lot already used in the delivery",
+   "expected": "Alert shown; \"Verify and apply lot code\" not available",
+   "baseline": "Applied",
+   "consequence": "See R4",
+   "revision": "v15. Same test before the revision (v14): FAIL (apply available: True)",
+   "id": "U3",
+   "observed": "alert shown: True; apply available: False",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Normal",
+   "layer": "Prototype",
+   "input": "Shipping case with the 3 correct signed receipts; name + signature + checkbox filled",
+   "expected": "All lines matched; both lots balance; Sign button enabled",
+   "baseline": "-",
+   "consequence": "-",
+   "revision": "-",
+   "id": "U4",
+   "observed": "issues: []; sign disabled: False",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Harmful error",
+   "layer": "Prototype",
+   "input": "Sunset receipt lot misread as RC-SLC-1109-01",
+   "expected": "Line marked \"No receiving record\"; alert; Sign button stays disabled even when fully filled",
+   "baseline": "Saved",
+   "consequence": "See R6",
+   "revision": "v15. Same test before the revision (v14): FAIL (line shown as matched: True; sign disabled: False)",
+   "id": "U5",
+   "observed": "issues: ['noRecv:RC-SLC-1109-01']; marked on screen: True; sign disabled: True",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Boundary",
+   "layer": "Prototype",
+   "input": "FreshWay receipt reads 22 CS slicer instead of 20",
+   "expected": "Lot shows \"Shipped 2 CS more than received\"; Sign disabled",
+   "baseline": "Not detected",
+   "consequence": "See R7",
+   "revision": "v15. Same test before the revision (v14): FAIL (balance chips all \"Balances\": True; sign disabled: False)",
+   "id": "U6",
+   "observed": "issues: ['overShip:RC-SLC-1109-07']; warning on screen: True; sign disabled: True",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Missing information",
+   "layer": "Prototype",
+   "input": "Signature attempt with name only (no drawing, box unticked)",
+   "expected": "Sign button disabled",
+   "baseline": "Paper initials, often missing",
+   "consequence": "Unattributed record",
+   "revision": "-",
+   "id": "U7",
+   "observed": "sign disabled: True",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Boundary",
+   "layer": "Prototype",
+   "input": "Hillcrest form: 12 destroyed + 3 sold of 16 received",
+   "expected": "Warning shown; no \"Confirm evidence\" button for Hillcrest",
+   "baseline": "Accepted",
+   "consequence": "See R8",
+   "revision": "v15. Same test before the revision (v14): FAIL (confirm buttons: 3 of 3)",
+   "id": "U8",
+   "observed": "warning shown: True; confirm buttons: 2 of 3",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Missing information",
+   "layer": "Prototype",
+   "input": "Sunset Corner has not replied 24 h after the recall notice",
+   "expected": "Story cannot continue until a call is logged (rule on event ev9)",
+   "baseline": "Follow-up depends on memory",
+   "consequence": "Recalled product stays on sale",
+   "revision": "-",
+   "id": "U9",
+   "observed": "can continue without call: False; after call logged: True",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Normal",
+   "layer": "Prototype",
+   "input": "Full 5-minute story run end to end (frontend/tests/e2e_story.py)",
+   "expected": "Story completes; FDA CSV from the server equals the on-screen spreadsheet cell for cell (2 receiving, 5 shipping rows); TR-2026-0412/0415 stay Pending",
+   "baseline": "FDA spreadsheet built by hand from paper",
+   "consequence": "-",
+   "revision": "-",
+   "id": "U10",
+   "observed": "Run frontend/tests/e2e_story.py: \"All checks passed\" (last run on 2026-11-14)",
+   "pass": "PASS",
+   "metric": ""
+  },
+  {
+   "cat": "Performance",
+   "layer": "Prototype",
+   "input": "Build the FDA spreadsheet for the cucumber lots (10 repetitions)",
+   "expected": "Under 1 second",
+   "baseline": "Hours to days by hand (forecast from interviews to be confirmed)",
+   "consequence": "-",
+   "revision": "-",
+   "id": "U11",
+   "observed": "page median 0.1 ms (max 0.2); server CSV median 1.1 ms (max 8.4)",
+   "pass": "PASS",
+   "metric": "latency"
+  },
+  {
+   "cat": "Missing information",
+   "layer": "Server",
+   "input": "Saved records checked for required Key Data Elements (/api/compliance)",
+   "expected": "Older history records without reference documents are listed",
+   "baseline": "Gaps found during an FDA request",
+   "consequence": "Incomplete FDA response",
+   "revision": "-",
+   "id": "U12",
+   "observed": "6 rows flagged (TR-2026-0398, TR-2026-0401, TR-2026-0405, TR-2026-0409)",
+   "pass": "PASS",
+   "metric": ""
+  }
+ ],
+ "browser_errors": []
+}

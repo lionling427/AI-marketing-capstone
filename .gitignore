@@ -1,0 +1,5 @@
+# runtime database and signatures (rebuilt on every start)
+backend/runtime/
+__pycache__/
+*.pyc
+.DS_Store

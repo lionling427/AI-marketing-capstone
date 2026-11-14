@@ -1,0 +1,4 @@
+# The app itself needs only Python 3.8+ (standard library). Nothing to install to run it.
+# These are optional, for developers:
+reportlab>=4.0      # data/tools/generate_documents.py: redraw the sample PDFs
+playwright>=1.40    # evidence/tests and frontend/tests: browser tests (then run: playwright install chromium)

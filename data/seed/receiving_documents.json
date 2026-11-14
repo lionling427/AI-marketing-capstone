@@ -1,0 +1,190 @@
+{
+  "note": "Field layout of the four receiving documents (invoice, packing slip, bill of lading, pallet label photo). Used to render documents/receiving/*.pdf and as the expected extraction.",
+  "documents": {
+    "inv": {
+      "title": "INVOICE",
+      "no": "# RC-55102",
+      "cols": "grid-template-columns: 2fr 1.6fr .6fr .6fr",
+      "meta": [
+        {
+          "l": "From",
+          "v": "Rio Claro Growers, Nogales, AZ",
+          "hk": "supplier"
+        },
+        {
+          "l": "Bill to",
+          "v": "Green Valley Produce, 1200 Harbor Rd, Oakland, CA"
+        },
+        {
+          "l": "PO",
+          "v": "PO-4486",
+          "hk": "po"
+        },
+        {
+          "l": "Invoice date",
+          "v": "2026-11-09"
+        }
+      ],
+      "head": [
+        "Item",
+        "Lot",
+        "Qty",
+        "Unit"
+      ],
+      "rows": [
+        {
+          "c": [
+            "English cucumbers",
+            "RC-ENG-1109-02",
+            "30",
+            "CS"
+          ],
+          "hk": "line0"
+        },
+        {
+          "c": [
+            "Slicer cucumbers",
+            "—",
+            "50",
+            "CS"
+          ],
+          "hk": "line1"
+        }
+      ],
+      "foot": "Terms: Net 21"
+    },
+    "pk": {
+      "title": "PACKING SLIP",
+      "no": "PO-4486",
+      "cols": "grid-template-columns: 2.4fr .8fr .8fr",
+      "meta": [
+        {
+          "l": "Ship from",
+          "v": "Rio Claro Growers"
+        },
+        {
+          "l": "Ship to",
+          "v": "Green Valley Produce – Oakland warehouse"
+        }
+      ],
+      "head": [
+        "Item",
+        "Qty",
+        "Unit"
+      ],
+      "rows": [
+        {
+          "c": [
+            "English cucumbers",
+            "30",
+            "CS"
+          ],
+          "hk": "qty0"
+        },
+        {
+          "c": [
+            "Slicer cucumbers",
+            "48",
+            "CS"
+          ],
+          "hk": "qty1"
+        }
+      ],
+      "foot": "Packed and checked by shipping dept."
+    },
+    "bol": {
+      "title": "BILL OF LADING",
+      "no": "BOL-902334",
+      "cols": "grid-template-columns: 2.4fr .8fr .8fr",
+      "meta": [
+        {
+          "l": "Shipper",
+          "v": "Rio Claro Growers, Nogales, AZ"
+        },
+        {
+          "l": "Consignee",
+          "v": "Green Valley Produce, 1200 Harbor Rd, Oakland, CA"
+        },
+        {
+          "l": "Carrier",
+          "v": "Coastline Reefer Lines"
+        },
+        {
+          "l": "Ship date",
+          "v": "2026-11-09",
+          "hk": "ship"
+        },
+        {
+          "l": "Received",
+          "v": "2026-11-10 · signed J. Ortiz",
+          "hk": "recv"
+        }
+      ],
+      "head": [
+        "Description",
+        "Pieces",
+        "Unit"
+      ],
+      "rows": [
+        {
+          "c": [
+            "English cucumbers",
+            "30",
+            "CS"
+          ],
+          "hk": ""
+        },
+        {
+          "c": [
+            "Slicer cucumbers",
+            "48",
+            "CS"
+          ],
+          "hk": ""
+        }
+      ],
+      "foot": "Reefer set point: 34 °F"
+    },
+    "lbl": {
+      "title": "PALLET LABEL (PHOTO)",
+      "no": "",
+      "cols": "grid-template-columns: 1.5fr 1.6fr 1.6fr 1fr",
+      "meta": [
+        {
+          "l": "Packed by",
+          "v": "Rio Claro Growers packhouse, Nogales, AZ",
+          "hk": "source"
+        }
+      ],
+      "head": [
+        "Product",
+        "GTIN",
+        "Lot",
+        "Pack date"
+      ],
+      "rows": [
+        {
+          "c": [
+            "English cucumbers",
+            "10850022300032",
+            "RC-ENG-1109-02",
+            "2026-11-09"
+          ],
+          "hk": "lot0",
+          "smudge": false
+        },
+        {
+          "c": [
+            "Slicer cucumbers",
+            "10850022300049",
+            "RC-C?L-11?9-0?",
+            "2026-11-09"
+          ],
+          "hk": "lot1",
+          "smudge": true
+        }
+      ],
+      "foot": "Photo taken at receiving dock"
+    }
+  }
+}
